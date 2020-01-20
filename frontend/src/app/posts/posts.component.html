@@ -1,0 +1,86 @@
+<!-- Post page UI -->
+<section class="margin-top" fxLayout="row">
+  <section fxLayout="column" fxLayoutGap="20px" style="margin-top:100px; margin-left: 50px;" >
+      <mat-card class="left">
+        <mat-card-title fxLayoutAlign="center center">Profile</mat-card-title>
+        <mat-card-content>
+          <mat-icon style="font-size: 190px">account_box</mat-icon>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="left">
+        <mat-card-title fxLayoutAlign="center center">Recent</mat-card-title>
+        <mat-card-content>
+          <p>Winthathon 2020</p>
+          <p>#internship</p>
+          <p>#Jobs</p>
+          <p>#jobposting</p>
+          <p>jobinterview</p>
+          <p>career</p>
+        </mat-card-content>
+      </mat-card>
+  </section>
+  <section fxLayoutAlign="center center" fxLayout="column">
+    <form [formGroup]="searchForm" (submit)="search()">
+      <mat-form-field appearance="outline">
+        <mat-label>Search a post</mat-label>
+        <mat-icon class="icon" matPrefix>search</mat-icon>
+        <input matInput placeholder="Search" formControlName="searchQuery" />
+        <mat-icon
+          #mic
+          class="icon"
+          [class.record]="!listenFlag"
+          matSuffix
+          (click)="listen()"
+          >mic</mat-icon
+        >
+      </mat-form-field>
+    </form>
+
+    <div
+      *ngIf="posts.length > 0"
+      class="main-content-width"
+      fxLayoutAlign="center center"
+      fxLayout="column"
+      fxLayoutGap="10px"
+    >
+      <mat-card *ngFor="let post of posts" class="posts">
+        <mat-card-title>
+          {{ post.title }}
+        </mat-card-title>
+        <mat-card-subtitle>
+          <strong>
+            {{ post.company }}
+            <mat-icon>room</mat-icon>
+            {{ post.location }}
+          </strong>
+        </mat-card-subtitle>
+        <mat-card-content>
+          {{ post.content }}
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <p class="mat-body-1" *ngIf="posts.length <= 0">No Posts available!</p>
+  </section>
+  <section fxLayout="column" fxLayoutGap="20px" style="margin-top:100px; margin-right: 50px;">
+    <mat-card style="width: 200px; height: 400px;">
+      <mat-card-title>
+        Today's news and views
+      </mat-card-title>
+      <mat-card-content>
+        <ul>
+          <li>Another blow for Airtel, Voda Idea</li>
+          <li>Amazon's job creation plan</li>
+          <li>New jobs, R&D to decide SEZ fit</li>
+          <li>India's early education crisis</li>
+          <li>Is India understating fiscal deficit?</li>
+          <li>Yoga comes to the workplace</li>
+          <li>India woos Apple, Samsung suppliers</li>
+          <li>A gender parity index for colleges</li>
+          <li>How to avoid 'culture misfit'</li>
+          <li>India's patent problem</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</section>

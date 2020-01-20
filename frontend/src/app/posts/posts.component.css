@@ -1,0 +1,20 @@
+mat-form-field {
+  width: 300px;
+}
+
+.posts {
+  width: 100%;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.record {
+  color: red;
+}
+
+.left {
+  width: 200px;
+  height: 200px;
+}

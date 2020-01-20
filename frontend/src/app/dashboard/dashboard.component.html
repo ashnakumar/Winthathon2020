@@ -1,0 +1,25 @@
+<!-- Landing page as browser loads -->
+<section class="margin-top" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px">
+  <button mat-raised-button color="primary" (click)="startFlow()">Start</button>
+  <mat-card class="main-content-width">
+    <mat-card-header fxLayoutAlign="center center">
+      <mat-card-title>Who's Browsing</mat-card-title>
+    </mat-card-header>
+    <div fxLayoutAlign="center center">
+      <mat-card-content style="width: 80%;">
+        <mat-grid-list cols="2">
+          <mat-grid-tile class="kids">
+          </mat-grid-tile>
+          <mat-grid-tile class="blind">
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+    </div>
+    <div>
+      <mat-card-actions fxLayoutAlign="space-evenly center">
+        <button mat-raised-button color="primary">Children</button>
+        <button mat-raised-button color="primary" [routerLink]="['posts']">Blind</button>
+      </mat-card-actions>
+    </div>
+  </mat-card>
+</section>

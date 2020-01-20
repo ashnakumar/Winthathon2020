@@ -1,0 +1,14 @@
+.kids {
+  background-image: url('../../assets/kids.jpg');
+  background-size: cover;
+}
+.blind {
+  background-image: url('../../assets/blinds.jpg');
+  background-size: cover;
+}
+button {
+  min-height: 50px !important;
+  min-width: 46px !important;
+  font-size: 35px !important;
+  line-height: 0px;
+}
